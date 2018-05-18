@@ -9,6 +9,7 @@ namespace QuadPay.Domain
         public decimal Amount { get; set; }
         private InstallmentStatus InstallmentStatus;
         public string PaymentReference { get; }
+        // Date this Installment was marked 'Paid'
         public DateTime SettlementDate { get; }
 
         public Installment(/* TODO */) {
