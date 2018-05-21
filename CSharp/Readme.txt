@@ -10,25 +10,25 @@ This coding assignment is designed to help you get familiar with our problem dom
 
 There are two projects in this solution:
 
- - QuadPay.Domain contains a few domain objects for you to work with. You'll notice some of the necessary implementation is stubbed out and marked with TODOs. This is not a superset of method/property signatures. Feel free to add more as you see fit.
+ - QuadPay.Domain contains a few domain objects for you to work with. You'll notice some of the necessary implementation is stubbed out and marked with TODOs. There may be some methods or properties missing, feel free to add more as you see fit.
 
  - QuadPay.Test contains a few example xUnit Unit Tests (all failing). 
  
- See if you can get the existing tests passing by fleshing out the missing PaymentPlan implementations. Also make sure to add new tests to increase coverage and insure each test is properly checking all edge cases/gotchas you can think of.
+ See if you can get the existing tests passing by fleshing out the missing PaymentPlan implementations. Also make sure to add new tests to increase coverage and ensure each test is properly checking all edge cases/gotchas you can think of.
 
 --------------------------
 
 If you're feeling ambitious and have extra time, put some thought into what other questions we might ask of our Domain model and what other functionality might be required in a PaymentPlan that does not exist in this version and have a go with implementing it.
 
 Example 1: 
-Customer Lucy Smith has multiple PaymentPlans (Orders) with varying statuses: 
-    How would you calculate Lucy's on-time payment ratio so we can decide if we want to let Lucy make more purchases with QuadPay? (Feel free to implement this as a Service)
+Customer Rose Ortiz has multiple PaymentPlans (Orders) with varying statuses: 
+    How would you calculate Rose's on-time payment ratio so we can decide if we want to let Rose make more purchases with QuadPay? (Feel free to implement this as a Service)
     Is there a better way to model this domain to make this calculation more straightforward? 
-    What if we wanted to calculate Lucy's Current exposure (sum of all Outstanding Installment amounts)?
+    What if we wanted to calculate Rose's Current exposure (sum of all Outstanding Installment amounts)?
 
 Example 2: 
-Customer Johnny B. Lately is having trouble keeping up with his current PaymentPlan (e.g. 25% every 2 weeks). We'd like to be able to offer Johnny a new PaymentPlan with a schedule that better fits his pay schedule and cash flow (e.g. 15% every 4 weeks). 
+Customer Alan Delgado is having trouble keeping up with his current PaymentPlan (e.g. 25% every 2 weeks). We'd like to be able to offer Alan a new PaymentPlan with a schedule that better fits his pay schedule and cash flow (e.g. 15% every 4 weeks). 
     What would be your approach to implementing support for this? 
     Would you create new Installments in the existing PaymentPlan?  
     Create a new PaymentPlan? 
-Try to anticipate what sort of issues we might encounter (e.g. after the migration and a few new 15% payments are taken, Johnny is refunded 70% of his original order amount).
+Try to anticipate what sort of issues we might encounter (e.g. after the migration and a few new 15% payments are taken, the Merchant for Alan's order issues a refund for 70% of the original order amount after he returns part of his order).
