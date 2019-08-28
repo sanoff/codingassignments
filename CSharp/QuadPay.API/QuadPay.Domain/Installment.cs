@@ -8,37 +8,44 @@ namespace QuadPay.Domain
         public DateTime Date { get; set; }
         public decimal Amount { get; set; }
         private InstallmentStatus InstallmentStatus;
-        public string PaymentReference { get; }
+        public Guid PaymentReference { get; set;  }
         // Date this Installment was marked 'Paid'
-        public DateTime SettlementDate { get; }
+        public DateTime SettlementDate { get; set; }
 
-        public Installment(/* TODO */) {
-            // TODO
+        public Installment(DateTime dueDate, decimal amount, InstallmentStatus installmentStatus = InstallmentStatus.Pending) {
+            Amount = amount;
+            Date = dueDate;
+            InstallmentStatus = installmentStatus;
+            Id = Guid.NewGuid();
         }
 
         public bool IsPaid { 
             get {
-                // TODO
-                return true;
+                return InstallmentStatus == InstallmentStatus.Paid;
             }
         }
 
         public bool IsDefaulted { 
             get {
-                // TODO
-                return true;
+                return InstallmentStatus == InstallmentStatus.Defaulted;
             }
         }
 
         public bool IsPending { 
             get {
-                // TODO
-                return true;
+                return InstallmentStatus == InstallmentStatus.Pending;
             }
         }
 
-        public void SetPaid(string paymentReference) {
-            // TODO
+        public void SetPaid(Guid paymentReference, DateTime datePaid) {
+            InstallmentStatus = InstallmentStatus.Paid;
+            SettlementDate = datePaid;
+            PaymentReference = paymentReference; 
+        }
+
+        public void SetDefaulted()
+        {
+            InstallmentStatus = InstallmentStatus.Defaulted;
         }
     }
 
